@@ -1,0 +1,14 @@
+[Unit]
+Description=OpenClaw Session Patcher Daemon
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /root/tmp/codex-session-patcher/openclaw_session_patcher_daemon.py
+Restart=always
+RestartSec=5
+Environment=OPENCLAW_PATCHER_INTERVAL=20
+WorkingDirectory=/root/tmp/codex-session-patcher
+
+[Install]
+WantedBy=default.target
